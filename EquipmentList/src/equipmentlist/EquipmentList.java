@@ -63,8 +63,18 @@ public class EquipmentList {
         public int size() {
             return size;
         }
-    public static void main(String[] args) {
-      
+        public Equipment[] toArray() {
+            Equipment[] records = new Equipment[size];
+            Node current = head;
+            int index = 0;
+
+            while (current != null) {
+                records[index] = current.data;
+                index++;
+                current = current.next;
+            }
+
+            return records;
+        }
     }
-    
-}
+  
