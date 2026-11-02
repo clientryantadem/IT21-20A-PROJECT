@@ -177,6 +177,63 @@ public class EquipmentInventoryGUI  extends JFrame {{
         form.add(rdoMaintenance);
         form.add(lblExtra);
         form.add(txtExtra);
+        
+        
+        int result = JOptionPane.showConfirmDialog(
+                this,
+                form,
+                "Register Equipment",
+                JOptionPane.OK_CANCEL_OPTION,
+                JOptionPane.PLAIN_MESSAGE
+        );
+
+        if (result != JOptionPane.OK_OPTION) {
+            return;
+        }
+
+        String id = txtID.getText().trim();
+        String name = txtName.getText().trim();
+        String category = txtCategory.getText().trim();
+        String extra = txtExtra.getText().trim();
+        String availability = selectedAvailability(rdoAvailable, rdoBorrowed, rdoMaintenance);
+
+        if (id.isEmpty() || name.isEmpty() || category.isEmpty() || extra.isEmpty()) {
+            JOptionPane.showMessageDialog(
+                    this,
+                    "All fields are required. Please complete the registration form.",
+                    "Validation Error",
+                    JOptionPane.WARNING_MESSAGE
+            );
+            return;
+        }
+
+        if (equipmentList.containsID(id)) {
+            JOptionPane.showMessageDialog(
+                    this,
+                    "Equipment ID \"" + id + "\" already exists. Duplicate IDs are not allowed.",
+                    "Duplicate ID",
+                    JOptionPane.ERROR_MESSAGE
+            );
+            return;
+        }
+
+        Equipment newEquipment;
+        if (rdoIT.isSelected()) {
+            newEquipment = new ITEquipment(id, name, category, availability, extra);
+        } else {
+            newEquipment = new LaboratoryEquipment(id, name, category, availability, extra);
+        }
+
+        equipmentList.add(newEquipment);
+        displayRecords(false);
+
+        JOptionPane.showMessageDialog(
+                this,
+                "Equipment registered successfully.",
+                "Success",
+                JOptionPane.INFORMATION_MESSAGE
+        );
+    }
 
 
     public static void main(String[] args) {
