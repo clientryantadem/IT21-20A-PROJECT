@@ -51,9 +51,26 @@ public String getEquipmentID() {
         this.availability = newAvailability;
     }
 
-    
-    public static void main(String[] args) {
        
+    public String getType() {
+        return "General";
     }
-    
+
+    /**
+     * Returns a readable summary of this equipment.
+     * Child classes override this to include extra attributes.
+     */
+    public String displayInfo() {
+        return "Equipment ID: " + equipmentID
+                + "\nEquipment Name: " + equipmentName
+                + "\nCategory: " + category
+                + "\nAvailability: " + availability
+                + "\nType: " + getType();
+    }
 }
+
+ 
+       
+    
+   
+
