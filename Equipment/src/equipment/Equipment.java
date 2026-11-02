@@ -14,6 +14,17 @@ public class Equipment {
         this.category = category;
         this.availability = availability;
     }
+public String getEquipmentID() {
+        return equipmentID;
+    }
+
+    public void setEquipmentID(String equipmentID) {
+        this.equipmentID = equipmentID;
+    }
+
+    public String getEquipmentName() {
+        return equipmentName;
+    }
 
     
     public static void main(String[] args) {
