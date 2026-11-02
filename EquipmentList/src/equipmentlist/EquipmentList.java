@@ -50,8 +50,19 @@ public class EquipmentList {
             }
 
             return null;
+          }
             
-            
+        public boolean containsID(String equipmentID) {
+            return searchByID(equipmentID) != null;
+        }
+
+        public boolean isEmpty() {
+            return head == null;
+        }
+
+        public int size() {
+            return size;
+        }
     public static void main(String[] args) {
       
     }
