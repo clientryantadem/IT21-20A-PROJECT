@@ -235,7 +235,100 @@ public class EquipmentInventoryGUI  extends JFrame {{
         );
     }
 
+rivate String selectedAvailability(JRadioButton available, JRadioButton borrowed, JRadioButton maintenance) {
+        if (borrowed.isSelected()) {
+            return "Borrowed";
+        }
+        if (maintenance.isSelected()) {
+            return "Under Maintenance";
+        }
+        return "Available";
+    }
 
+    private void displayRecords(boolean showEmptyMessage) {
+        tableModel.setRowCount(0);
+
+        if (equipmentList.isEmpty()) {
+            if (showEmptyMessage) {
+                JOptionPane.showMessageDialog(
+                        this,
+                        "There are no registered equipment records.",
+                        "No Records",
+                        JOptionPane.INFORMATION_MESSAGE
+                );
+            }
+            return;
+        }
+
+        Equipment[] records = equipmentList.toArray();
+        for (int i = 0; i < records.length; i++) {
+            Equipment item = records[i];
+            Object[] row = {
+                item.getEquipmentID(),
+                item.getEquipmentName(),
+                item.getCategory(),
+                item.getAvailability(),
+                item.getType()
+            };
+            tableModel.addRow(row);
+        }
+    }
+
+    private void searchEquipment() {
+        String id = txtSearchID.getText().trim();
+
+        if (id.isEmpty()) {
+            JOptionPane.showMessageDialog(
+                    this,
+                    "Please enter an Equipment ID to search.",
+                    "Search",
+                    JOptionPane.WARNING_MESSAGE
+            );
+            return;
+        }
+
+        Equipment found = equipmentList.searchByID(id);
+
+        if (found == null) {
+            JOptionPane.showMessageDialog(
+                    this,
+                    "Equipment not found.",
+                    "Search Result",
+                    JOptionPane.INFORMATION_MESSAGE
+            );
+            return;
+        }
+
+        JOptionPane.showMessageDialog(
+                this,
+                found.displayInfo(),
+                "Equipment Found",
+                JOptionPane.INFORMATION_MESSAGE
+        );
+    }
+
+    private void updateAvailability() {
+        String id = JOptionPane.showInputDialog(
+                this,
+                "Enter Equipment ID:",
+                "Update Availability",
+                JOptionPane.QUESTION_MESSAGE
+        );
+
+        if (id == null) {
+            return;
+        }
+
+        id = id.trim();
+        if (id.isEmpty()) {
+            JOptionPane.showMessageDialog(
+                    this,
+                    "Equipment ID is required.",
+                    "Validation Error",
+                    JOptionPane.WARNING_MESSAGE
+            );
+            return;
+        }
     public static void main(String[] args) {
     
     }
