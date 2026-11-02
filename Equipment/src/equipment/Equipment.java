@@ -36,6 +36,20 @@ public String getEquipmentID() {
     public void setCategory(String category) {
         this.category = category;
     }
+    public String getAvailability() {
+        return availability;
+    }
+
+    public void setAvailability(String availability) {
+        this.availability = availability;
+    }
+
+    /**
+     * Updates the availability of this equipment object.
+     */
+    public void updateAvailability(String newAvailability) {
+        this.availability = newAvailability;
+    }
 
     
     public static void main(String[] args) {
