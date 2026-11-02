@@ -351,8 +351,24 @@ rivate String selectedAvailability(JRadioButton available, JRadioButton borrowed
                 found.getAvailability()
         );
         
-    public static void main(String[] args) {
-    
+        if (newAvailability == null) {
+            return;
+        }
+
+        found.updateAvailability(newAvailability);
+        displayRecords(false);
+
+        JOptionPane.showMessageDialog(
+                this,
+                "Availability updated successfully.",
+                "Success",
+                JOptionPane.INFORMATION_MESSAGE
+        );
     }
-    
 }
+
+
+    
+    
+    
+
