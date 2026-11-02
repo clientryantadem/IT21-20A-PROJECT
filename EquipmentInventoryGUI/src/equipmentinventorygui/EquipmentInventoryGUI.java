@@ -93,6 +93,91 @@ public class EquipmentInventoryGUI  extends JFrame {{
                 return false;
             }
         };
+        
+        
+        tblRecords = new JTable(tableModel);
+        tblRecords.setRowHeight(24);
+        tblRecords.getTableHeader().setBackground(NAVY);
+        tblRecords.getTableHeader().setForeground(WHITE);
+        tblRecords.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 12));
+        tblRecords.setFont(new Font("Segoe UI", Font.PLAIN, 12));
+        tblRecords.setSelectionBackground(new Color(147, 197, 253));
+
+        JScrollPane scrollPane = new JScrollPane(tblRecords);
+        scrollPane.setBounds(20, 105, 590, 250);
+        scrollPane.setBorder(BorderFactory.createLineBorder(NAVY));
+        add(scrollPane);
+
+        btnRegister = createButton("Register Equipment");
+        btnRegister.setBounds(20, 375, 180, 32);
+        btnRegister.addActionListener(e -> registerEquipment());
+        add(btnRegister);
+
+        btnDisplay = createButton("Display Records");
+        btnDisplay.setBounds(220, 375, 180, 32);
+        btnDisplay.addActionListener(e -> displayRecords(true));
+        add(btnDisplay);
+
+        btnUpdate = createButton("Update Availability");
+        btnUpdate.setBounds(420, 375, 190, 32);
+        btnUpdate.addActionListener(e -> updateAvailability());
+        add(btnUpdate);
+    }
+
+    private JButton createButton(String text) {
+        JButton button = new JButton(text);
+        button.setBackground(BUTTON_BLUE);
+        button.setForeground(WHITE);
+        button.setFocusPainted(false);
+        button.setFont(new Font("Segoe UI", Font.BOLD, 12));
+        button.setBorder(BorderFactory.createEmptyBorder(6, 10, 6, 10));
+        return button;
+    }
+
+    private void registerEquipment() {
+        JTextField txtID = new JTextField();
+        JTextField txtName = new JTextField();
+        JTextField txtCategory = new JTextField();
+        JTextField txtExtra = new JTextField();
+
+        JRadioButton rdoIT = new JRadioButton("IT Equipment", true);
+        JRadioButton rdoLab = new JRadioButton("Laboratory Equipment");
+        ButtonGroup typeGroup = new ButtonGroup();
+        typeGroup.add(rdoIT);
+        typeGroup.add(rdoLab);
+
+        JRadioButton rdoAvailable = new JRadioButton("Available", true);
+        JRadioButton rdoBorrowed = new JRadioButton("Borrowed");
+        JRadioButton rdoMaintenance = new JRadioButton("Under Maintenance");
+        ButtonGroup availabilityGroup = new ButtonGroup();
+        availabilityGroup.add(rdoAvailable);
+        availabilityGroup.add(rdoBorrowed);
+        availabilityGroup.add(rdoMaintenance);
+
+        JLabel lblExtra = new JLabel("Brand:");
+        rdoIT.addActionListener(e -> lblExtra.setText("Brand:"));
+        rdoLab.addActionListener(e -> lblExtra.setText("Laboratory Name:"));
+
+        JPanel form = new JPanel(new GridLayout(0, 2, 8, 8));
+        form.add(new JLabel("Equipment ID:"));
+        form.add(txtID);
+        form.add(new JLabel("Equipment Name:"));
+        form.add(txtName);
+        form.add(new JLabel("Category:"));
+        form.add(txtCategory);
+        form.add(new JLabel("Type:"));
+        form.add(rdoIT);
+        form.add(new JLabel(""));
+        form.add(rdoLab);
+        form.add(new JLabel("Availability:"));
+        form.add(rdoAvailable);
+        form.add(new JLabel(""));
+        form.add(rdoBorrowed);
+        form.add(new JLabel(""));
+        form.add(rdoMaintenance);
+        form.add(lblExtra);
+        form.add(txtExtra);
+
 
     public static void main(String[] args) {
     
