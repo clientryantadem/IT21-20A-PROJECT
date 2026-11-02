@@ -25,6 +25,17 @@ public String getEquipmentID() {
     public String getEquipmentName() {
         return equipmentName;
     }
+     public void setEquipmentName(String equipmentName) {
+        this.equipmentName = equipmentName;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
 
     
     public static void main(String[] args) {
