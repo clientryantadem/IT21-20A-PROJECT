@@ -38,6 +38,20 @@ public class EquipmentList {
 
             size++;
         }
+        
+          public Equipment searchByID(String equipmentID) {
+            Node current = head;
+
+            while (current != null) {
+                if (current.data.getEquipmentID().equalsIgnoreCase(equipmentID)) {
+                    return current.data;
+                }
+                current = current.next;
+            }
+
+            return null;
+            
+            
     public static void main(String[] args) {
       
     }
