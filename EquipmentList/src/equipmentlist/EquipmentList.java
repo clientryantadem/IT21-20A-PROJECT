@@ -23,6 +23,21 @@ public class EquipmentList {
             this.size = 0;
         }
 
+        public void add(Equipment equipment) {
+            Node newNode = new Node(equipment);
+
+            if (head == null) {
+                head = newNode;
+            } else {
+                Node current = head;
+                while (current.next != null) {
+                    current = current.next;
+                }
+                current.next = newNode;
+            }
+
+            size++;
+        }
     public static void main(String[] args) {
       
     }
