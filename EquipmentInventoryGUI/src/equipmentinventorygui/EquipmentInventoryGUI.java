@@ -329,6 +329,28 @@ rivate String selectedAvailability(JRadioButton available, JRadioButton borrowed
             );
             return;
         }
+        
+        Equipment found = equipmentList.searchByID(id);
+        if (found == null) {
+            JOptionPane.showMessageDialog(
+                    this,
+                    "Equipment not found.",
+                    "Update Availability",
+                    JOptionPane.INFORMATION_MESSAGE
+            );
+            return;
+        }
+
+        String newAvailability = (String) JOptionPane.showInputDialog(
+                this,
+                "Select new availability for " + found.getEquipmentName() + ":",
+                "Update Availability",
+                JOptionPane.QUESTION_MESSAGE,
+                null,
+                AVAILABILITY_OPTIONS,
+                found.getAvailability()
+        );
+        
     public static void main(String[] args) {
     
     }
