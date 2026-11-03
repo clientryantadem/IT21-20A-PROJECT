@@ -1,9 +1,6 @@
 package schoolinventoryGUI;
 
-/**
- * Parent class for all school equipment.
- * Demonstrates encapsulation with private attributes and public getters/setters.
- */
+
 public class Equipment {
 
     private String equipmentID;

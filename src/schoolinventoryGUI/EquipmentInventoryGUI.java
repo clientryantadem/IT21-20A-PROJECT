@@ -18,7 +18,7 @@ import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
 
 
-public class EquipmentInventoryGUI  extends JFrame {{
+public class EquipmentInventoryGUI  extends JFrame {
 
   
     private final EquipmentList equipmentList;
@@ -235,7 +235,7 @@ public class EquipmentInventoryGUI  extends JFrame {{
         );
     }
 
-rivate String selectedAvailability(JRadioButton available, JRadioButton borrowed, JRadioButton maintenance) {
+    private String selectedAvailability(JRadioButton available, JRadioButton borrowed, JRadioButton maintenance) {
         if (borrowed.isSelected()) {
             return "Borrowed";
         }

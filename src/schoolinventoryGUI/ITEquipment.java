@@ -18,7 +18,7 @@ public class ITEquipment extends Equipment {
     }
  @Override
     public String getType() {
-        return "Pathfit Office";
+        return "IT Equipment";
     }
      @Override
     public String displayInfo() {

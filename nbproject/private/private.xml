@@ -3,9 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/LENOVO/Projects/schoolnventoryGUI1/demo/src/schoolinventoryGUI/Equipment.java</file>
             <file>file:/C:/Users/LENOVO/Projects/schoolnventoryGUI1/demo/src/schoolinventoryGUI/EquipmentInventoryGUI.java</file>
-            <file>file:/C:/Users/LENOVO/Projects/schoolnventoryGUI1/demo/src/schoolinventoryGUI/EquipmentList.java</file>
+            <file>file:/C:/Users/LENOVO/Projects/schoolnventoryGUI1/demo/src/schoolinventoryGUI/ITEquipment.java</file>
+            <file>file:/C:/Users/LENOVO/Projects/schoolnventoryGUI1/demo/src/schoolinventoryGUI/LaboratoryEquipment.java</file>
+            <file>file:/C:/Users/LENOVO/Projects/schoolnventoryGUI1/demo/src/schoolinventoryGUI/schoolUI.java</file>
         </group>
     </open-files>
 </project-private>
