@@ -23,4 +23,8 @@ public class LaboratoryEquipment extends Equipment {
     public String getType() {
         return "Laboratory Equipment";
     }
+    @Override
+    public String displayInfo() {
+        return super.displayInfo() + "\nLaboratory: " + laboratoryName;
+}
 }
