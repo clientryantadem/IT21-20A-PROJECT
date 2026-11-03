@@ -1,7 +1,14 @@
 
 package schoolinventoryGUI;
 
+public class ITEquipment extends Equipment {
 
-public class ITEquipment {
+    private String brand;
+
+    public ITEquipment(String equipmentID, String equipmentName, String category,
+                       String availability, String brand) {
+        super(equipmentID, equipmentName, category, availability);
+        this.brand = brand;
+    }
     
 }
