@@ -54,6 +54,8 @@ public class schoolUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
+
         jLabel1.setText("School Equipment Inventory");
 
         jLabel2.setText("Search Equipment ID");
@@ -76,6 +78,8 @@ public class schoolUI extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(jTable1);
 
+        jButton2.setBackground(new java.awt.Color(0, 153, 0));
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("Register Equipment ");
         jButton2.addActionListener(this::jButton2ActionPerformed);
 
