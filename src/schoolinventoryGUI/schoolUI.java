@@ -83,9 +83,13 @@ public class schoolUI extends javax.swing.JFrame {
         jButton2.setText("Register Equipment ");
         jButton2.addActionListener(this::jButton2ActionPerformed);
 
+        jButton3.setBackground(new java.awt.Color(0, 153, 0));
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("Display Records");
         jButton3.addActionListener(this::jButton3ActionPerformed);
 
+        jButton4.setBackground(new java.awt.Color(0, 153, 0));
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setText("Update Availability");
         jButton4.addActionListener(this::jButton4ActionPerformed);
 
