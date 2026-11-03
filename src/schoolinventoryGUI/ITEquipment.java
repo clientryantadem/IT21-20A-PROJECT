@@ -10,5 +10,8 @@ public class ITEquipment extends Equipment {
         super(equipmentID, equipmentName, category, availability);
         this.brand = brand;
     }
+    public String getBrand() {
+        return brand;
+    }
     
 }
