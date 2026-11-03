@@ -67,7 +67,7 @@ public class schoolUI extends javax.swing.JFrame {
         jButton1.setText("Search");
         jButton1.addActionListener(this::jButton1ActionPerformed);
 
-        jTable1.setBackground(new java.awt.Color(0, 0, 102));
+        jTable1.setForeground(new java.awt.Color(255, 255, 255));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
@@ -76,7 +76,7 @@ public class schoolUI extends javax.swing.JFrame {
                 {null, null, null, null, null}
             },
             new String [] {
-                "ID", "NAME", "CATEGORY", "STATUS", "TYPE"
+                "Equipment ID", "Equipment Name", "CATEGORY", "Availability", "Type"
             }
         ));
         jScrollPane3.setViewportView(jTable1);
