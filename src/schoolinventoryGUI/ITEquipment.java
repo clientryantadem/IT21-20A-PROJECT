@@ -16,6 +16,9 @@ public class ITEquipment extends Equipment {
      public void setBrand(String brand) {
         this.brand = brand;
     }
-
+ @Override
+    public String getType() {
+        return "IT Equipment";
+    }
     
 }
