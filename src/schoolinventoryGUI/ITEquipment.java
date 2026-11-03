@@ -18,7 +18,11 @@ public class ITEquipment extends Equipment {
     }
  @Override
     public String getType() {
-        return "IT Equipment";
+        return "Pathfit Office";
+    }
+     @Override
+    public String displayInfo() {
+        return super.displayInfo() + "\nBrand: " + brand;
     }
     
 }
